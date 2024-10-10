@@ -1,0 +1,235 @@
+@font-face {
+    font-family: 'HankenGrotesk';
+    font-style: swap;
+    src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+}
+
+:root {
+    /* ### Primary */
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+
+    /* ## Gradients */
+    --Light-slate-blue-background: hsl(252, 100%, 67%);
+    --Light-royal-blue-background: hsl(241, 81%, 54%);
+
+    --Violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --Persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+    /* ### Neutral */
+
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'HankenGrotesk', sans-serif;
+    background-color: var(--White);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+}
+
+p {
+    font-size: 18px !important;
+}
+
+img {
+    display: block;
+    margin-inline: .5em;
+}
+
+strong {
+    color: var(--Dark-gray-blue);
+}
+
+.box {
+    width: clamp(80px, 100%, 700px);
+    height: auto;
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+    box-shadow: 10px 15px 15px 0 var(--Pale-blue);
+}
+
+.result {
+    width: 35%;
+    height: auto;
+    padding: 1em 3rem;
+    color: var(--Light-lavender);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: auto;
+    border-radius: 2em;
+    background-image: linear-gradient(to bottom, var(--Light-slate-blue-background) 50%, var(--Light-royal-blue-background) 100%);
+}
+
+.result h3 {
+    font-size: 1.5rem;
+}
+
+.circle {
+    width: 100px;
+    height: auto;
+    padding: 2em;
+    border-radius: 50%;
+    text-align: center;
+    background-image: linear-gradient(to bottom, var(--Violet-blue-circle) 50%, var(--Persian-blue-circle) 100%);
+}
+
+.big-font {
+    color: var(--White);
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+.info h2 {
+    color: var(--White);
+}
+
+.summary {
+    padding-inline: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+}
+
+.summary h2 {
+    color: var(--Dark-gray-blue);
+}
+
+.subjects {
+    display: grid;
+    gap: 1em;
+    width: 100%;
+}
+
+.subjects div {
+    border-radius: .5em;
+}
+
+.subjects div p {
+    padding-inline: 1em;
+    border-radius: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+
+.subjects div p span {
+    color: #aaa;
+    margin-left: auto;
+    font-weight: 800;
+}
+
+.subjects div:nth-child(1) {
+    background-color: hsla(0, 100%, 67%, 0.1);
+
+    p:nth-child(1) {
+        color: var(--Light-red);
+    }
+}
+
+.subjects div:nth-child(2) {
+    background-color: hsla(39, 100%, 56%, 0.1);
+
+    p:nth-child(1) {
+        color: var(--Orangey-yellow);
+    }
+}
+
+.subjects div:nth-child(3) {
+    background-color: hsla(166, 100%, 37%, 0.1);
+
+    p:nth-child(1) {
+        color: var(--Green-teal);
+    }
+}
+
+.subjects div:nth-child(4) {
+    background-color: hsla(234, 85%, 45%, 0.1);
+
+    p:nth-child(1) {
+        color: var(--Cobalt-blue);
+    }
+}
+
+.summary button {
+    border: none;
+    color: var(--White);
+    background-color: var(--Dark-gray-blue);
+    font-size: inherit;
+    width: 100%;
+    padding: 1em;
+    border-radius: 2em;
+    margin-block: 2em;
+    cursor: pointer;
+}
+
+.summary button:hover,
+.summary button:active {
+    background-image: linear-gradient(to bottom, var(--Light-slate-blue-background) 10%, var(--Light-royal-blue-background) 100%);
+}
+
+@media (max-width: 700px) {
+    .box {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .result {
+        margin-right: 0;
+        width: auto;
+        /* padding-block: 1em; */
+        border-radius: 0 0 2em 2em;
+    }
+
+    .big-font {
+        color: var(--White);
+        font-size: 3.5rem;
+        font-weight: 800;
+    }
+
+    .circle {
+        width: 80px;
+        height: auto;
+    }
+
+    p {
+        font-size: 12px !important;
+    }
+
+    .result h3 {
+        font-size: 1rem;
+    }
+
+    .result h2 {
+        font-size: 1rem;
+    }
+
+    .summary {
+        width: 80%;
+        padding-inline: 2em;
+    }
+}
